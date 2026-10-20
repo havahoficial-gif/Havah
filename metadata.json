@@ -1,0 +1,8 @@
+{
+  "name": "HAVAH",
+  "description": "Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

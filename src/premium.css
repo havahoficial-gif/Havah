@@ -1,0 +1,71 @@
+/* ==========================================================
+   HAVAH · Capa premium (Mejora 2)
+   Pulido global para todas las pantallas. Para quitarla, borra
+   la línea  import './premium.css';  de src/main.tsx
+   ========================================================== */
+
+/* Base más fina */
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body { text-rendering: optimizeLegibility; }
+
+/* Selección de texto elegante */
+::selection { background: rgba(103, 232, 249, 0.28); color: inherit; }
+
+/* Barras de scroll delgadas y translúcidas */
+* { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.22) transparent; }
+*::-webkit-scrollbar { width: 8px; height: 8px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.20);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.34); background-clip: padding-box; border: 2px solid transparent; }
+
+/* Aparición suave al cambiar de pestaña (solo opacidad: no afecta a los modales) */
+@keyframes havahScreenIn { from { opacity: 0; } to { opacity: 1; } }
+main.main-content > div { animation: havahScreenIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) backwards; }
+
+/* Respuesta táctil: botones se hunden un poco al pulsar */
+button:not(:disabled), [role="button"] {
+  transition: scale 0.18s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.18s ease, filter 0.18s ease;
+}
+button:not(:disabled):active, [role="button"]:active { scale: 0.97; }
+
+/* Foco accesible y bonito (solo con teclado) */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid rgba(103, 232, 249, 0.75);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* Versículos: mejor corte de líneas y tipografía */
+.font-serif-scripture {
+  text-wrap: pretty;
+  font-optical-sizing: auto;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
+  hanging-punctuation: first last;
+}
+
+/* Titulares equilibrados */
+h1, h2, h3 { text-wrap: balance; }
+
+/* Imágenes: sin arrastre accidental y aparición suave */
+img { -webkit-user-drag: none; user-select: none; }
+
+/* Tarjetas de cristal: brillo sutil al pasar el ratón (solo PC) */
+@media (hover: hover) {
+  .liquid-glass, .liquid-glass-subtle {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .liquid-glass:hover {
+    border-color: rgba(255,255,255,0.22) !important;
+    box-shadow: 0 18px 50px -12px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06) inset !important;
+  }
+}
+
+/* Campos de texto: cursor y color de acento coherentes */
+input, textarea { caret-color: #67e8f9; accent-color: #67e8f9; }

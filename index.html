@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>HAVAH • Biblia, Oración y Reposo</title>
+    <meta name="description" content="Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad." />
+    
+    <!-- PWA & App Icons -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:title" content="HAVAH • Biblia, Oración y Reposo" />
+    <meta property="og:description" content="Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad." />
+    <meta property="og:image" content="/pwa-icon-512.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="HAVAH" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HAVAH • Biblia, Oración y Reposo" />
+    <meta name="twitter:description" content="Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad." />
+    <meta name="twitter:image" content="/pwa-icon-512.png" />
+    <link rel="canonical" href="https://ais-dev-4wnao6jee76x3iglcm2ode-931361696865.europe-west2.run.app/" />
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "HAVAH",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "All",
+      "description": "Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    <meta name="theme-color" content="#030712" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Preload Logo for 0ms Instant First Paint -->
+    <link rel="preload" as="image" href="/pwa-icon-512.png" fetchpriority="high" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="margin: 0; overflow-x: hidden; background-color: #2e6aa0;">
+    <div id="root">
+      <!-- Instant 0ms Native Splash: Renders the exact millisecond index.html arrives (Zero Blank Screen) -->
+      <div id="instant-splash" style="position:fixed;inset:0;background:linear-gradient(180deg, #2e6aa0 0%, #4182b8 35%, #68a4d4 70%, #b6dbf5 100%);display:flex;align-items:center;justify-content:center;z-index:99999;">
+        <div style="width:112px;height:112px;display:flex;align-items:center;justify-content:center;">
+          <img src="/pwa-icon-512.png" alt="HAVAH" style="width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:0 20px 45px rgba(2, 40, 80, 0.35);" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Service worker: solo en https real. En localhost se elimina para evitar pantallas en blanco por caché vieja.
+      (function () {
+        if (!('serviceWorker' in navigator)) return;
+        var local = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+        if (local) {
+          navigator.serviceWorker.getRegistrations().then(function (rs) { rs.forEach(function (r) { r.unregister(); }); });
+          if (window.caches) caches.keys().then(function (ks) { ks.forEach(function (k) { caches.delete(k); }); });
+        } else if (location.protocol === 'https:') {
+          window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+        }
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "short_name": "HAVAH",
+  "name": "HAVAH • Biblia, Oración y Reposo",
+  "description": "Un espacio de calma y fe para leer la Biblia, orar, reflexionar y acompañarse con amor en comunidad.",
+  "icons": [
+    {
+      "src": "/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#020408",
+  "theme_color": "#030712",
+  "display": "standalone",
+  "orientation": "portrait"
+}
