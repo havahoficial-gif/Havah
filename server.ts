@@ -979,10 +979,13 @@ async function startServer() {
   if (isProduction) {
     if (fs.existsSync(distPath)) {
       app.use(express.static(distPath, {
-        etag: false,
+        etag: true,
+        maxAge: '1y',
         setHeaders: (res, filePath) => {
           if (filePath.endsWith('index.html') || filePath.endsWith('sw.js')) {
             res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+          } else {
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
           }
         }
       }));

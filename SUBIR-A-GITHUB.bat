@@ -9,18 +9,18 @@ cd /d "C:\Users\thoma\Downloads\Havah-PC"
 echo [Directorio actual]: %CD%
 echo.
 
-echo [1/3] Preparando correccion de puerto...
+echo [1/3] Preparando mejoras de velocidad...
 git add .
 
 echo [2/3] Guardando commit...
-git commit -m "Corregir puerto duplicado EADDRINUSE"
+git commit -m "Optimizar caché para carga instantánea"
 
 echo [3/3] Subiendo a GitHub...
 git push -u origin main
 
 echo.
 echo ========================================================
-echo  ¡LISTO! Cambios subidos a GitHub.
+echo  ¡LISTO! Cambios de velocidad subidos a GitHub.
 echo ========================================================
 echo.
 pause
